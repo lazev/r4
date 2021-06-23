@@ -154,7 +154,7 @@ const Fields = {
 		wrap.setAttribute('class', 'R4Fields');
 		wrap.appendChild(elem);
 		if(passEye) wrap.appendChild(passEye);
-		
+
 		wrap.appendChild(bar);
 		if(label) wrap.appendChild(label);
 
@@ -232,7 +232,7 @@ const Fields = {
 		}
 
 		elem.addEventListener('blur', function(event){
-			if(event.target.value) {
+			if(event.target.value && event.target.value != 0) {
 				wrap.classList.add('withContent');
 			} else {
 				wrap.classList.remove('withContent');
@@ -249,7 +249,7 @@ const Fields = {
 		let id      = (prefix)   ? prefix +'_'+ item.id : item.id;
 		let name    = item.name || item.id;
 		let type    = item.type;
-		let classes = ['R4Buttons'];
+		let classes = ['R4'];
 		let attr    = item.attr || {};
 
 		let attrib  = {

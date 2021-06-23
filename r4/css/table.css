@@ -1,17 +1,17 @@
-.R4Table {
+table.R4 {
 	width: 100%;
 }
 
-.R4Table th,
-.R4Table td {
-	text-align: left;	
+table.R4 th,
+table.R4 td {
+	text-align: left;
 }
 
-.R4Table.center th,
-.R4Table.center td {
+table.R4.center th,
+table.R4.center td {
 	text-align: center;
 }
 
-.R4Table > thead > tr > th[orderBy] {
+table.R4 > thead > tr > th[orderBy] {
 	cursor: pointer;
 }

@@ -11,7 +11,7 @@
 */
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
-@import url('thirdparty/normalize.css');
+@import url(thirdparty/normalize.css);
 @import url(buttons.css);
 @import url(dialog.css);
 @import url(fields.css);
@@ -25,16 +25,16 @@
 	line-height: 1.5;
 }
 
-.bgPrimary { background-color: #2196f3; }
-.bgInfo    { background-color: #673ab7; }
-.bgDanger  { background-color: #e81e62; }
-.bgSuccess { background-color: #009688; }
-.bgWarning { background-color: #f37e21; }
-.bgFancy   { background-color: #cddc39; }
-.bgGrey    { background-color: #616161; }
-.bgLight   { background-color: #999999; }
-.bgWhite   { background-color: #ffffff; }
-.bgBlack   { background-color: #000000; }
+.bgPrimary { background-color: #2196f3 !important; }
+.bgInfo    { background-color: #673ab7 !important; }
+.bgDanger  { background-color: #e81e62 !important; }
+.bgSuccess { background-color: #009688 !important; }
+.bgWarning { background-color: #f37e21 !important; }
+.bgFancy   { background-color: #cddc39 !important; }
+.bgGrey    { background-color: #616161 !important; }
+.bgLight   { background-color: #999999 !important; }
+.bgWhite   { background-color: #ffffff !important; }
+.bgBlack   { background-color: #000000 !important; }
 
 .primary { color: #2196f3 !important; }
 .info    { color: #673ab7 !important; }
@@ -61,8 +61,6 @@
 
 .transition { transition: 0.2s ease-out; }
 
-.dialogOpen { overflow: hidden; }
-
 body, html {
 	height: 100%;
 }
@@ -81,12 +79,6 @@ a {
 
 a:hover, a:focus {
 	text-decoration: underline;
-}
-
-a:focus {
-	outline: thin dotted;
-	outline: 5px auto -webkit-focus-ring-color;
-	outline-offset: -2px;
 }
 
 p {
@@ -114,7 +106,6 @@ strong {
 
 abbr[title] {
 	cursor: help;
-	-webkit-text-decoration-color: #2196f3;
 	text-decoration-color: #2196f3;
 }
 
@@ -140,9 +131,9 @@ h5 { font-size: 1rem;     }
 h6 { font-size: 0.875rem; }
 
 p {
-  font-size: 1.125rem;
-  font-weight: 200;
-  line-height: 1.8;
+	font-size: 1.125rem;
+	font-weight: 200;
+	line-height: 1.8;
 }
 
 small {
@@ -158,6 +149,11 @@ small {
 	clear: both;
 	display: table;
 }
+
+
+/* DO NOT USE */
+
+.dialogOpen { overflow: hidden; }
 
 .slider {
 	display: none;
@@ -175,6 +171,7 @@ small {
 
 
 /*POP*/
+
 .R4Pop {
 	min-width: 200px;
 	background: white;
@@ -194,16 +191,11 @@ small {
 	margin: 3px 0 0 0;
 }
 
-
-
 /*PANEL*/
+
 .panel {
 	padding: 20px;
 	margin-bottom: 20px;
-   -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
-   -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
-   box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 2px 0 rgba(0,0,0,.12);
 	box-sizing: border-box;
 }

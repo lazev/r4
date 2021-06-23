@@ -35,7 +35,6 @@
 	transition: 0.1s ease all;
 	-o-transition: 0.1s ease all;
 	-moz-transition: 0.1s ease all;
-	-webkit-transition: 0.1s ease all;
 }
 
 .R4Fields:not(.switch) > input:focus ~ label,
@@ -70,9 +69,6 @@
 	position: absolute;
 	background: #337ab7;
 	transition: 0.2s ease all;
-	-o-transition: 0.2s ease all;
-	-moz-transition: 0.2s ease all;
-	-webkit-transition: 0.2s ease all;
 }
 .R4Fields > .bar:before {
 	left: 50%;
@@ -93,52 +89,47 @@
 .R4Fields.switch {
 	display: inline-block;
 	position: relative;
-	margin: 0 0 10px;
 	font-size: 16px;
 	line-height: 24px;
+	margin-bottom: 29px;
 }
 .R4Fields.switch > input {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 36px;
-	height: 24px;
 	opacity: 0;
 	z-index: 0;
 }
 .R4Fields.switch > label {
 	display: block;
-	padding: 0 0 0 44px;
+	padding: 9px 0 8px 44px;
 	cursor: pointer;
 }
 .R4Fields.switch > label:before {
 	content: '';
 	position: absolute;
-	top: 5px;
+	top: 13px;
 	left: 0;
 	width: 36px;
 	height: 14px;
 	background-color: rgba(0, 0, 0, 0.26);
 	border-radius: 14px;
 	z-index: 1;
-	-webkit-transition: background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 	transition: background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .R4Fields.switch > label:after {
 	content: '';
 	position: absolute;
-	top: 2px;
+	top: 10px;
 	left: 0;
 	width: 20px;
 	height: 20px;
 	background-color: #fff;
 	border-radius: 14px;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+	box-shadow:
+		0 2px 2px 0 rgba(0, 0, 0, 0.14),
+		0 3px 1px -2px rgba(0, 0, 0, 0.2),
 		0 1px 5px 0 rgba(0, 0, 0, 0.12);
 	z-index: 2;
-	-webkit-transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 	transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-	-webkit-transition-property: left, background-color;
 	transition-property: left, background-color;
 }
 .R4Fields.switch > input:checked + label {
