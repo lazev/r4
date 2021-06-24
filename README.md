@@ -104,6 +104,13 @@ const R4Init = () => {
 //Warning joga mensagens flutuantes na tela.
 //Tipo toast em outros frameworks.
 Warning.on('Exemplo de warning', 'Linha debaixo');
+
+Effects.slideDown(elem, [callback]);
+Effects.slideUp(elem, [callback]);
+Effects.fadeIn(elem, [callback, duration, display]);
+Effects.fadeOut(elem, [callback, duration]);
+
+
 ```
 
 ### CAMPOS
@@ -132,5 +139,23 @@ Fields.create([
 </div>
 ```
 ```javascript
+//Jeito rápido
 $('#formDialog').dialog('open');
+
+//Jeito completo
+Dialog.create({objDeOpcoes});
+
+{objDeOpcoes}.
+id
+title
+html
+classes
+style
+onOpen
+onCreate
+open
+ephemeral
+onClose
+beforeClose
+buttons
 ```
