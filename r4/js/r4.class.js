@@ -11,17 +11,17 @@ $.methods = {
 
 	init: function(R4Init) {
 		$().listeners()
-		
+
 		if(typeof R4Init === 'function') R4Init()
 
 		//$().sWorker();
 	},
 
-	
+
 	listeners: function() {
 		//mobile debuger
 		window.onerror = function (msg, url, lineNo, columnNo, error) {
-			alert(msg)
+			Warning.on(msg, url +': '+ lineNo +':'+columnNo+':'+error)
 		};
 
 		document.addEventListener('keydown', function(event) {
@@ -37,7 +37,7 @@ $.methods = {
 		});
 	},
 
-	
+
 	sWorker: function() {
 
 		window.isUpdateAvailable = new Promise(function(resolve, reject) {
@@ -77,7 +77,7 @@ $.methods = {
 
 	},
 
-	
+
 	uniqid: function() {
 		return (
 			Math.random()
@@ -117,7 +117,7 @@ $.methods = {
 						var resp = xhr.responseText;
 						try {
 							var jResp = JSON.parse(resp);
-							
+
 							if(jResp.error === 1) {
 								Warning.on(jResp.errMsg, jResp.errObs);
 								reject(jResp);
@@ -139,7 +139,7 @@ $.methods = {
 		});
 	},
 
-	
+
 	getScript: function(files) {
 		return new Promise((resolve, reject) => {
 			let arrFiles = [];
@@ -157,8 +157,8 @@ $.methods = {
 			resolve()
 		})
 	},
-	
-	
+
+
 	//JQUERY FUNCTIONS
 	each: function(func) {
 		Array.prototype.forEach.call(this, func);
@@ -299,7 +299,7 @@ $.methods = {
 			el.addEventListener('click', cb);
 		});
 	},
-	
+
 	submit: function(cb) {
 		this.each(el => {
 			el.addEventListener('submit', cb);

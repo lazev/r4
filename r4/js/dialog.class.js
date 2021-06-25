@@ -16,13 +16,14 @@ const Dialog = {
 			let html      = opts.html        || '';
 			let classes   = [];
 			let style     = opts.style       || {};
-			let onOpen    = opts.onOpen      || function(){};
-			let onCreate  = opts.onCreate    || function(){};
 			let open      = opts.open        || false;
 			let ephemeral = opts.ephemeral   || false;
-			let onClose   = opts.onClose     || false;
-			let befClose  = opts.beforeClose || false;
 			let buttons   = opts.buttons     || [];
+
+			let onOpen    = opts.onOpen      || function(){};
+			let onCreate  = opts.onCreate    || function(){};
+			let onClose   = opts.onClose     || function(){};
+			let befClose  = opts.beforeClose || function(){};
 
 			let over = document.createElement('div');
 			let modl = document.createElement('div');
@@ -42,11 +43,11 @@ const Dialog = {
 			} else {
 				cont = document.createElement('div');
 				cont.innerHTML = html;
-				idElem = id || 'R4'+ Math.random().toString().substr(-9);
+				idElem = id || Math.random().toString().substr(-9);
 				cont.id = idElem;
 			}
 
-			if($('#'+ idElem +'R4Overlay').length) {
+			if($('#R4Overlay-'+ idElem).length) {
 				resolve(idElem);
 			}
 
@@ -69,8 +70,8 @@ const Dialog = {
 
 			cont.classList.remove('hidden');
 
-			modl.id = idElem +'R4Dialog';
-			over.id = idElem +'R4Overlay';
+			modl.id = 'R4Dialog-'+ idElem;
+			over.id = 'R4Overlay-'+ idElem;
 
 			if(ephemeral) over.setAttribute('ephemeral', 'true');
 
@@ -107,7 +108,7 @@ const Dialog = {
 
 					classes = [];
 					classes.push((item.classes) || ['default']);
-					classes.push('R4Buttons');
+					classes.push('R4');
 					classes.push('onRight');
 
 					strClasses = classes.join(' ');
@@ -171,7 +172,7 @@ const Dialog = {
 			idElem = idElemOrOpts;
 		}
 
-		let over = document.getElementById(idElem +'R4Overlay');
+		let over = document.getElementById('R4Overlay-'+ idElem);
 		document.body.appendChild(over);
 
 		over.classList.remove('hidden');
@@ -183,7 +184,7 @@ const Dialog = {
 		}
 
 		/*
-		let modl = document.getElementById(idElem +'R4Dialog');
+		let modl = document.getElementById('R4Dialog-'+ idElem);
 		if(modl.offsetHeight+100 < window.innerHeight) {
 			modl.style.marginTop = '50px';
 		}
@@ -192,13 +193,14 @@ const Dialog = {
 
 
 	close: function(idElem) {
-		Dialog.closeOverlay(idElem +'R4Overlay');
+		Dialog.closeOverlay('R4Overlay-'+ idElem);
 	},
 
 
 	closeOverlay: function(idOver) {
+		console.log(idOver);
 		let over = document.getElementById(idOver);
-		let idElem = idOver.replace('R4Overlay', '');
+		let idElem = idOver.replace('R4Overlay-', '');
 		let retBefClose = true;
 
 		if(typeof Dialog.beforeCloseFuncs[idElem] === 'function') {
