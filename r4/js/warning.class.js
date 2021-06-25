@@ -1,8 +1,8 @@
 const Warning = {
-	
+
 	on: function(msg, obs, opts) {
 		if(!opts) opts = {};
-		
+
 		let fixed = opts.fixed || false;
 		let id    = opts.id    || $().uniqid();
 
@@ -13,11 +13,11 @@ const Warning = {
 			container.setAttribute('id', 'R4WarningContainer');
 			document.body.prepend(container);
 		}
-		
+
 		let elem = document.createElement('div');
 		elem.classList.add('R4Warning');
 		elem.setAttribute('id', id);
-		
+
 		if(fixed) {
 			let closer = document.createElement('div');
 			closer.classList.add('R4WarningCloser');
@@ -32,7 +32,7 @@ const Warning = {
 				Warning.off(this);
 			});
 		}
-		
+
 		let msgElem = document.createElement('div');
 		msgElem.classList.add('R4WarningMsg');
 		msgElem.innerHTML = msg;
@@ -46,7 +46,7 @@ const Warning = {
 		}
 
 		container.appendChild(elem);
-		
+
 		return id;
 	},
 
@@ -54,5 +54,5 @@ const Warning = {
 	off: function(elem) {
 		elem.remove();
 	}
-	
+
 };

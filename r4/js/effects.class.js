@@ -15,12 +15,12 @@ const Effects = {
 		window.setTimeout(function () {
 			elem.style.height = '';
 			elem.classList.remove('slider');
-			
+
 			if(typeof callback == 'function') callback(elem);
 		}, 200);
 	},
-	
-	
+
+
 	slideUp: function(elem, callback) {
 
 		elem.classList.add('slider');
@@ -34,18 +34,18 @@ const Effects = {
 
 		window.setTimeout(function () {
 			elem.classList.remove('is-visible');
-			
+
 			if(typeof callback == 'function') callback(elem);
 		}, 200);
 	},
 
-	
+
 	fadeIn: function(elem, callback, duration, display) {
 		elem.classList.remove('hidden');
 		var s = elem.style, step = 25/(duration || 300);
 		s.opacity = s.opacity || 0;
 		s.display = display || 'block';
-		
+
 		(function fade() {
 			if((s.opacity = parseFloat(s.opacity)+step) > 1) {
 				s.opacity = 1;
@@ -55,12 +55,12 @@ const Effects = {
 			}
 		})();
 	},
-	
+
 
 	fadeOut: function(elem, callback, duration) {
 		var s = elem.style, step = 25/(duration || 300);
 		s.opacity = s.opacity || 1;
-		
+
 		(function fade() {
 			if((s.opacity -= step) < 0) {
 				s.display = 'none';
@@ -70,7 +70,5 @@ const Effects = {
 			}
 		})();
 	}
-	
+
 };
-
-
