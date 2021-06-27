@@ -49,6 +49,7 @@ const Dialog = {
 
 			if($('#R4Overlay-'+ idElem).length) {
 				resolve(idElem);
+				return;
 			}
 
 			classes.push((opts.classes) || ['default']);
@@ -70,7 +71,7 @@ const Dialog = {
 
 			cont.classList.remove('hidden');
 
-			modl.id = 'R4Dialog-'+ idElem;
+			modl.id = 'R4Dialog-' + idElem;
 			over.id = 'R4Overlay-'+ idElem;
 
 			if(ephemeral) over.setAttribute('ephemeral', 'true');
@@ -163,11 +164,11 @@ const Dialog = {
 	},
 
 
-	open: function(idElemOrOpts) {
+	open: async function(idElemOrOpts) {
 		let idElem;
 
 		if(typeof idElemOrOpts === 'object') {
-			idElem = Dialog.create(idElemOrOpts);
+			idElem = await Dialog.create(idElemOrOpts);
 		} else {
 			idElem = idElemOrOpts;
 		}
