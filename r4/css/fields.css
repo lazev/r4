@@ -4,7 +4,7 @@
 	margin-bottom: 35px;
 }
 
-.R4Fields > input,
+.R4Fields:not(.switch) > input,
 .R4Fields > textarea,
 .R4Fields > select {
 	font-size: 18px;
@@ -16,7 +16,7 @@
 	background-color: #fafafa;
 }
 
-.R4Fields > input:focus,
+.R4Fields:not(.switch) > input:focus,
 .R4Fields > textarea:focus,
 .R4Fields > select:focus {
 	outline: none;

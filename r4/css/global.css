@@ -19,10 +19,6 @@
 @import url(table.css);
 @import url(warning.css);
 
-* {
-	font-family: 'Lato', Helvetica, sans-serif;
-	line-height: 1.5;
-}
 
 .bgPrimary { background-color: #2196f3 !important; }
 .bgInfo    { background-color: #673ab7 !important; }
@@ -60,14 +56,17 @@
 
 .transition { transition: 0.2s ease-out; }
 
+* {
+	font-family: 'Lato', Helvetica, sans-serif;
+	line-height: 1.5;
+}
+
 body, html {
 	height: 100%;
 }
 
 body {
-	font-size: 14px;
 	font-weight: 400;
-	line-height: 1.429;
 	background: #fafafa;
 }
 
